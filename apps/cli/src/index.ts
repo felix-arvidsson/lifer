@@ -1,9 +1,7 @@
 #!/usr/bin/env node
 import { program } from 'commander';
 import { createTRPCProxyClient, httpBatchLink } from '@trpc/client';
-import type { AppRouter } from '../../backend/src/index';
-import React from 'react';
-import { render } from 'ink';
+import type { AppRouter } from '../../backend/src/index.ts'
 
 const trpc = createTRPCProxyClient<AppRouter>({
   links: [
@@ -21,9 +19,11 @@ program
 program
   .command('hello [name]')
   .description('Say hello')
-  .action(async (name?: string) => {
-    const response = await trpc.hello.query(name);
-    console.log(response);
+  .action(async (name: string) => {
+    if (name) {
+      const response = await trpc.hello.query({ message: name })
+      console.log(response);
+    }
   });
 
 program.parse();

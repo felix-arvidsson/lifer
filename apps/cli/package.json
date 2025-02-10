@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "dev": "ts-node --esm src/index.ts",
+    "cli": "tsx src/index.ts hello world",
     "lint": "eslint src --ext ts,tsx",
     "start": "node dist/index.js"
   },
@@ -22,6 +22,8 @@
     "@types/node": "^20.0.0",
     "@types/react": "^18.2.0",
     "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "tsx": "^4.19.2",
     "typescript": "^5.0.0"
   }
 }

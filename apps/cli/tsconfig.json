@@ -1,37 +1,14 @@
-// apps/cli/tsconfig.json
 {
   "compilerOptions": {
-    "target": "ES2022",
-    "module": "ESNext",
-    "lib": [
-      "ES2022"
-    ],
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "strict": true,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ESNext",
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "jsx": "react",
-    "incremental": true,
-    "paths": {
-      "@lifer/backend/*": [
-        "../backend/src/*"
-      ]
-    }
+    "allowSyntheticDefaultImports": true,
+    "outDir": "./dist",
+    "strict": true
   },
   "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ],
-  "references": [
-    {
-      "path": "../backend"
-    }
+    "src/**/*.ts"
   ]
 }

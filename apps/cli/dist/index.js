@@ -16,7 +16,9 @@ program
     .command('hello [name]')
     .description('Say hello')
     .action(async (name) => {
-    const response = await trpc.hello.query(name);
-    console.log(response);
+    if (name) {
+        const response = await trpc.hello.query({ message: name });
+        console.log(response);
+    }
 });
 program.parse();
